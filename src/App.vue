@@ -1,10 +1,10 @@
 <script setup>
-
+  import UpdateScore from './components/UpdateScore.vue';
 </script>
 
 <template>
   <div>
-    CHAT
+    <UpdateScore />
   </div>
 </template>
 
