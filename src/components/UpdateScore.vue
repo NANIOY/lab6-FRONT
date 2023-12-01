@@ -1,40 +1,44 @@
 <template>
-    <div>
-      <h1>Update Scores</h1>
-  
-      <!-- Team Dropdown -->
-      <label for="team">Select Team:</label>
-      <select v-model="selectedTeam" class="team">
-        <option v-for="team in teams" :key="team">{{ team }}</option>
-      </select>
-  
-      <!-- Score Input -->
-      <label for="score">Enter Score:</label>
-      <input v-model="score" type="number" class="score" />
-  
-      <!-- Update Button -->
-      <button @click="updateScore">Update Score</button>
+    <div class="frame">
+        <h1>Update Scores</h1>
+
+        <!-- Team Dropdown -->
+        <div class="team">
+            <label for="team">Select Team:</label>
+            <select v-model="selectedTeam" class="team-selector">
+                <option v-for="team in teams" :key="team">{{ team }}</option>
+            </select>
+        </div>
+
+
+        <!-- Score Input -->
+        <div class="score">
+            <label for="score">Enter Score:</label>
+            <input v-model="score" type="number" class="score-input" />
+        </div>
+
+        <!-- Update Button -->
+        <button @click="updateScore">Update Score</button>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
+<script>
+export default {
     data() {
-      return {
-        selectedTeam: null,
-        score: null,
-        teams: ['Astralis', 'NiP', 'NAVI'],
-      };
+        return {
+            selectedTeam: null,
+            score: null,
+            teams: ['Astralis', 'NiP', 'NAVI'],
+        };
     },
     methods: {
-      updateScore() {
-        console.log('Updating score:', this.selectedTeam, this.score);
-      },
+        updateScore() {
+            console.log('Updating score:', this.selectedTeam, this.score);
+        },
     },
-  };
-  </script>
+};
+</script>
   
-  <style scoped>
-  
-  </style>
+<style scoped>
+</style>
   
