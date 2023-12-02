@@ -31,11 +31,18 @@ export default {
             teams: ['Astralis', 'NiP', 'NAVI'],
         };
     },
-    methods: {
-        updateScore() {
-            console.log('Updating score:', this.selectedTeam, this.score);
+     methods: {
+    updateScore() {
+      const updatedData = {
+        type: 'update_scores',
+        data: {
+          team: this.selectedTeam,
+          score: parseInt(this.score),
         },
+      };
+      this.$socket.send(JSON.stringify(updatedData));
     },
+  },
 };
 </script>
   
@@ -72,4 +79,3 @@ button {
     cursor: pointer;
 }
 </style>
-  
