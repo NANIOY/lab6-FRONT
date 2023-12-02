@@ -1,17 +1,15 @@
+import { createRouter, createMemoryHistory } from "vue-router";
 import UpdateScore from './components/UpdateScore.vue';
 import Scoreboard from './components/Scoreboard.vue';
 
-Vue.use(Router);
+const Routes = [
+  { path: "/update", component: UpdateScore },
+  { path: "/scoreboard", component: Scoreboard },
+];
 
-export default new Router({
-  routes: [
-    {
-      path: '/update',
-      component: UpdateScore,
-    },
-    {
-      path: '/scoreboard',
-      component: Scoreboard,
-    },
-  ],
+const router = createRouter({
+  history: createMemoryHistory(),
+  routes: Routes,
 });
+
+export default router;
