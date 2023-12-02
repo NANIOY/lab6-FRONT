@@ -49,7 +49,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 98vh;
+  height: 90vh;
 }
 
 .team {
